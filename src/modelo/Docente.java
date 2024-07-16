@@ -14,30 +14,29 @@ public class Docente extends Persona{
     private String especialidad;
     private String titulo;
     private String registroSenescyt;
-    private String escalaSalaria;
+    private String escalaSalarial;
     
      public Docente() {
     }
 //Atributos propios
-    public Docente(int idDocente, String especialidad, String titulo, String registroSenescyt, String escalaSalaria) {
+    public Docente(int idDocente, String especialidad, String titulo, String registroSenescyt, String escalaSalarial) {
         this.idDocente = idDocente;
         this.especialidad = especialidad;
         this.titulo = titulo;
         this.registroSenescyt = registroSenescyt;
-        this.escalaSalaria = escalaSalaria;
+        this.escalaSalarial = escalaSalarial;
     }
 
 //Constructor superclase
 
-    public Docente(int idDocente, String especialidad, String titulo, String registroSenescyt, String escalaSalaria, int idPersona, String nombre, String apellidos, int telefono, String fechaNacimiento, String cedula, String direccion, String correoElectronico, String sexo, String usuario, String clave) {
+    public Docente(int idDocente, String especialidad, String titulo, String registroSenescyt, String escalaSalarial, int idPersona, String nombre, String apellidos, int telefono, String fechaNacimiento, String cedula, String direccion, String correoElectronico, String sexo, String usuario, String clave) {
         super(idPersona, nombre, apellidos, telefono, fechaNacimiento, cedula, direccion, correoElectronico, sexo, usuario, clave);
         this.idDocente = idDocente;
         this.especialidad = especialidad;
         this.titulo = titulo;
         this.registroSenescyt = registroSenescyt;
-        this.escalaSalaria = escalaSalaria;
+        this.escalaSalarial = escalaSalarial;
     }
-    
     
 //Encapsulamiento
 
@@ -45,41 +44,51 @@ public class Docente extends Persona{
         return idDocente;
     }
 
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public String getRegistroSenescyt() {
-        return registroSenescyt;
-    }
-
-    public String getEscalaSalaria() {
-        return escalaSalaria;
-    }
-
     public void setIdDocente(int idDocente) {
         this.idDocente = idDocente;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
     }
 
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getRegistroSenescyt() {
+        return registroSenescyt;
     }
 
     public void setRegistroSenescyt(String registroSenescyt) {
         this.registroSenescyt = registroSenescyt;
     }
 
-    public void setEscalaSalaria(String escalaSalaria) {
-        this.escalaSalaria = escalaSalaria;
+    public String getEscalaSalarial() {
+        return escalaSalarial;
     }
+
+    public void setEscalaSalarial(String escalaSalarial) {
+        this.escalaSalarial = escalaSalarial;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+   
     
     public String imprimir(){
         return "-------DATOS PERSONA-----------\n"+
@@ -97,7 +106,7 @@ public class Docente extends Persona{
                 "Especialidad:"+getEspecialidad()+"\n"+
                 "Titulo:"+getTitulo()+"\n"+
                 "Registro Senescyt:"+getRegistroSenescyt()+"\n"+
-                "Escala Salarial:"+getEscalaSalaria();
+                "Escala Salarial:"+getEscalaSalarial();
                 
     }
 

@@ -12,7 +12,7 @@ public class Persona {
     //atributos
 
     private int idPersona;
-    private String nombre;
+    String nombre;
     private String apellidos;
     private int telefono;
     private String fechaNacimiento;

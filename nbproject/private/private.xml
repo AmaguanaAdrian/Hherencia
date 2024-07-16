@@ -5,7 +5,15 @@
         <group>
             <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/Controlador/Conexion.java</file>
             <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/modelo/Persona.java</file>
-            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/vista/main.java</file>
+            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/modelo/Estudiante.java</file>
+            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/modelo/Docente.java</file>
+            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/Controlador/AdministrativoControlador.java</file>
+            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/vista/main2.java</file>
+            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/modelo/Cuenta.java</file>
+            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/Controlador/EstudianteControlador.java</file>
+            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/Controlador/PersonaControlador.java</file>
+            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/modelo/Administrativo.java</file>
+            <file>file:/C:/Users/USER/OneDrive/Documentos/DEBERES_MODELAMIETO/HumanosHeren/src/Controlador/DocenteControlador.java</file>
         </group>
     </open-files>
 </project-private>

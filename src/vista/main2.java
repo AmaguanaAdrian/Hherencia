@@ -4,8 +4,14 @@
  */
 package vista;
 
+import Controlador.AdministrativoControlador;
+import Controlador.DocenteControlador;
+import Controlador.EstudianteControlador;
 import Controlador.PersonaControlador;
 import java.util.Scanner;
+import modelo.Administrativo;
+import modelo.Docente;
+import modelo.Estudiante;
 import modelo.Persona;
 
 /**
@@ -58,15 +64,19 @@ public class main2 {
                 i = 0;
             }else if (op1 == 6){
                 System.out.println("Eliga la transacción a realizar\n"+
-                        "1.Crear Persona");
+                        "1.Crear Persona\n"+
+                        "2.Crear Estudiante\n"+
+                        "3.Crear Administrativo\n"+
+                        "4.Crear Docente");
                 int mp=es.nextInt();
                 if(mp==1){
                     System.out.println("Ingrese los datos informativos");
                     Persona p=new Persona();
-                    System.out.println("Ingrese su Nombre:");
-                    p.setNombre(es.next());
-                    System.out.println("Ingrese su Apellidos:");
-                    p.setApellidos(es.next());
+                    es.nextLine();
+                    System.out.println("Ingrese sus Nombres:");
+                    p.setNombre(es.nextLine());
+                    System.out.println("Ingrese sus Apellidos:");
+                    p.setApellidos(es.nextLine());
                     System.out.println("Ingrese su número de cédula:");
                     p.setCedula(es.next());
                     System.out.println("Ingrese un Usuario:");
@@ -86,7 +96,137 @@ public class main2 {
                     
                     PersonaControlador pc=new PersonaControlador();
                     pc.crearPersona(p);
-                }
+                }else if(mp==2){
+                    System.out.println("Ingrese los datos personales");
+                    Persona p=new Persona();
+                    System.out.println("Ingrese sus Nombres:");
+                    p.setNombre(es.nextLine());
+                    es.nextLine();
+                    System.out.println("Ingrese sus Apellidos:");
+                    p.setApellidos(es.nextLine());
+                    System.out.println("Ingrese su número de cédula:");
+                    p.setCedula(es.next());
+                    System.out.println("Ingrese un Usuario:");
+                    p.setUsuario(es.next());
+                    System.out.println("Ingrese una Clave:");
+                    p.setClave(es.next());
+                    System.out.println("Ingrese una Dirección:");
+                    p.setDireccion(es.next());
+                    System.out.println("Ingrese su Correo Electrónico:");
+                    p.setCorreoElectronico(es.next());
+                    System.out.println("Ingrese el sexo:");
+                    p.setSexo(es.next());
+                    System.out.println("Ingrese su Fecha de Nacimiento:");
+                    p.setFechaNacimiento(es.next());
+                    System.out.println("Ingrese un número Telefónico:");
+                    p.setTelefono(es.nextInt());
+                    //CONTROLADOR
+                    PersonaControlador pc=new PersonaControlador();
+                    pc.crearPersona(p);
+                     System.out.println("Ingrese los siguientes datos del estudiante");
+                     //Modelo
+                   int idPersona = pc.buscarIdPersona(p.getCedula());
+                    System.out.println("-------------"+idPersona);
+                    Estudiante est=new Estudiante();
+                    System.out.println("Ingrese numero de matricula:");
+                    p.setNombre(es.next());
+                    System.out.println("Ingrese la jornada de estudio");
+                    est.setJornada(es.next());
+                    est.setIdPersona(idPersona);
+                    EstudianteControlador estC = new EstudianteControlador();
+                    estC.crearEstudiante(est);
+                   
+                    
+                }else if (mp == 3) {
+                    System.out.println("Ingrese los siguientes datos personales");
+                    //MODELO DE LA SUPER CLASE
+                    Persona p = new Persona();
+                    System.out.println("Ingrese sus Nombres:");
+                    p.setNombre(es.nextLine());
+                    es.nextLine();
+                    System.out.println("Ingrese sus Apellidos:");
+                    p.setApellidos(es.nextLine());
+                    System.out.println("Ingrese su número de cédula:");
+                    p.setCedula(es.next());
+                    System.out.println("Ingrese un Usuario:");
+                    p.setUsuario(es.next());
+                    System.out.println("Ingrese una Clave:");
+                    p.setClave(es.next());
+                    System.out.println("Ingrese una Dirección:");
+                    p.setDireccion(es.next());
+                    System.out.println("Ingrese su Correo Electrónico:");
+                    p.setCorreoElectronico(es.next());
+                    System.out.println("Ingrese el sexo:");
+                    p.setSexo(es.next());
+                    System.out.println("Ingrese su Fecha de Nacimiento:");
+                    p.setFechaNacimiento(es.next());
+                    System.out.println("Ingrese un número Telefónico:");
+                    p.setTelefono(es.nextInt());
+                    //CONTROLADOR
+                    PersonaControlador pc = new PersonaControlador();
+                    pc.crearPersona(p);
+                    System.out.println("Ingrese los siguientes datos Administrativos");
+                    //OBTENER EL ID DE LA TABLA PERSONAS (SUPER CLASE)
+                   int idPersona=pc.buscarIdPersona(p.getCedula());
+                    System.out.println("-------------------"+idPersona);
+                    //MODELO DE LA SUBCLASE   
+                    Administrativo ad = new Administrativo();
+                    System.out.println("Ingrese el cargo:");
+                    ad.setCargo(es.next());
+                    System.out.println("Ingrese su área de trabajo:");
+                    ad.setArea(es.next());
+                  
+                    
+                    AdministrativoControlador adC=new AdministrativoControlador();
+                    adC.crearAdministrativo(ad, idPersona);
+
+                    }else if (mp == 4) {
+                    System.out.println("Ingrese los siguientes datos personales");
+                    // MODELO DE LA SUPER CLASE
+                    Persona p = new Persona();
+                    es.nextLine();
+                    System.out.println("Ingrese sus Nombres:");
+                    p.setNombre(es.nextLine());
+                    System.out.println("Ingrese sus Apellidos:");
+                    p.setApellidos(es.nextLine());
+                    System.out.println("Ingrese su número de cédula:");
+                    p.setCedula(es.next());
+                    System.out.println("Ingrese un Usuario:");
+                    p.setUsuario(es.next());
+                    System.out.println("Ingrese una Clave:");
+                    p.setClave(es.next());
+                    System.out.println("Ingrese una Dirección:");
+                    p.setDireccion(es.next());
+                    System.out.println("Ingrese su Correo Electrónico:");
+                    p.setCorreoElectronico(es.next());
+                    System.out.println("Ingrese el sexo:");
+                    p.setSexo(es.next());
+                    System.out.println("Ingrese su Fecha de Nacimiento:");
+                    p.setFechaNacimiento(es.next());
+                    System.out.println("Ingrese un número Telefónico:");
+                    p.setTelefono(es.nextInt());
+                    // CONTROLADOR
+                    PersonaControlador pc = new PersonaControlador();
+                    pc.crearPersona(p);
+                    System.out.println("Ingrese los siguientes datos del docente");
+                    // OBTENER EL ID DE LA TABLA PERSONAS (SUPER CLASE)
+                    int idPersona = pc.buscarIdPersona(p.getCedula());
+                    System.out.println("-------------------" + idPersona);
+                    // MODELO DE LA SUBCLASE
+                    Docente doc = new Docente();
+                    System.out.println("Ingrese la especialidad:");
+                    doc.setEspecialidad(es.next());
+                    System.out.println("Ingrese el título:");
+                    doc.setTitulo(es.next());
+                    System.out.println("Ingrese el registro Senescyt:");
+                    doc.setRegistroSenescyt(es.next());
+                    System.out.println("Ingrese la escala salarial:");
+                    doc.setEscalaSalarial(es.next());
+
+                    DocenteControlador docC = new DocenteControlador();
+                    docC.crearDocente(doc, idPersona);
+               }
+
               
             }
 

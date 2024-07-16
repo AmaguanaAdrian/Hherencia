@@ -20,7 +20,7 @@ public class PersonaControlador {
     Conexion conexion=new Conexion();
     Connection connection=(Connection)conexion.conectar();
     PreparedStatement ejecutar;
-    ResultSet resultado;
+    ResultSet resultado; // consult.set
     
     //INSERTAR FILAS EN TABLA
     //Insetar filas en una tabla
@@ -45,4 +45,20 @@ public class PersonaControlador {
         }
             
    }
+    public int buscarIdPersona(String cedula){
+        try {
+            String consultaSQL = "SELECT idpersona FROM persona WHERE cedula='"+cedula+"';";
+            ejecutar = (PreparedStatement)connection.prepareCall(consultaSQL);
+            resultado = ejecutar.executeQuery();
+            if(resultado.next()){
+                int idPersona = resultado.getInt("idpersona");
+                return idPersona;
+            }else{
+                System.out.println("Ingrese una cedula valida");
+            }
+        } catch (Exception e) {
+            System.out.println("Comuniquese con el administrador para el error"+e);
+        }
+        return 0;
+    }
 }
